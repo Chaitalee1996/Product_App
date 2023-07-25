@@ -1,10 +1,12 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import {Text, View} from 'react-native'
+import {Button, Text, View} from 'react-native'
 
 const ProductDetails=()=>{
+    const navigation=useNavigation()
     return(
         <View>
-            <Text>Product Details </Text>
+            <Button title="Go to Register" onPress={()=>{navigation.navigate('register')}}/>
         </View>
     )
 }

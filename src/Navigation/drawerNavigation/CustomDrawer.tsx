@@ -1,5 +1,5 @@
 import { View, Text, Image } from 'react-native'
-import React from 'react'
+import React,{useEffect} from 'react'
 import { responsiveFontSize, responsiveScreenHeight, responsiveWidth, responsiveHeight } from 'react-native-responsive-dimensions'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -9,7 +9,7 @@ import { DrawerContentScrollView, DrawerItem,DrawerItemList } from '@react-navig
 const CustomDrawer = (props: any) => {
 
 
-
+  
   return (
     <>
       <View style={{ height: responsiveScreenHeight(30), backgroundColor: '#F08080', padding: responsiveWidth(10) }}>
@@ -33,6 +33,7 @@ const CustomDrawer = (props: any) => {
           
             <DrawerItem
             label="User Profile"
+            
             labelStyle={{
               marginLeft: -25,
               fontFamily: 'Robbto-medium',
@@ -41,7 +42,7 @@ const CustomDrawer = (props: any) => {
               color: 'black',
             }}
             onPress={() => {
-              props.navigation.navigate('User Profile')
+              props.navigation.navigate('user')
             }}
             icon={() => (
               <Icon name="user" size={30} color="#900" />
@@ -68,7 +69,7 @@ const CustomDrawer = (props: any) => {
               color: 'black',
             }}
             onPress={() => {
-              props.navigation.navigate('User Profile')
+              props.navigation.navigate('register')
             }}
             icon={() => (
               <Icon name="user" size={30} color="#900" />
@@ -92,7 +93,7 @@ const CustomDrawer = (props: any) => {
               color: 'black',
             }}
             onPress={() => {
-              props.navigation.navigate('User Profile')
+              props.navigation.navigate('dashbaord')
             }}
             icon={() => (
               <MaterialCommunityIcons name="folder-account" size={30} color="#900" />
@@ -116,7 +117,7 @@ const CustomDrawer = (props: any) => {
               color: 'black',
             }}
             onPress={() => {
-              props.navigation.navigate('User Profile')
+              props.navigation.navigate('dashbaord')
             }}
             icon={() => (
     
@@ -140,7 +141,7 @@ const CustomDrawer = (props: any) => {
               color: 'black',
             }}
             onPress={() => {
-              props.navigation.navigate('User Profile')
+              props.navigation.navigate('dashbaord')
             }}
             icon={() => (
     
@@ -171,7 +172,7 @@ const CustomDrawer = (props: any) => {
               color: 'black',
             }}
             onPress={() => {
-              props.navigation.navigate('User Profile')
+              props.navigation.navigate('dashbaord')
             }}
             icon={() => (
     
