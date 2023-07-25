@@ -122,13 +122,64 @@ const CustomDrawer = (props: any) => {
     
               <FontAwesome name="shopping-cart" size={30} color="#900" />
             )} />
+              <View
+            style={{
+              borderBottomStartRadius: 10,
+              borderBottomEndRadius: 10,
+              //  borderColor: "#EBE7E6",
+              borderColor: '#3B3B3B',
+              borderBottomWidth: 2,
+            }} />
+          <DrawerItem
+            label="Setting"
+            labelStyle={{
+              marginLeft: -25,
+              fontFamily: 'Robbto-medium',
+              fontSize: 15,
+              fontWeight: 'bold',
+              color: 'black',
+            }}
+            onPress={() => {
+              props.navigation.navigate('User Profile')
+            }}
+            icon={() => (
+    
+              <FontAwesome name="shopping-cart" size={30} color="#900" />
+            )} />
 
 
         </>
 
       </View>
       <View style={{ height: responsiveScreenHeight(20) }}>
-        <Text>Footer Drawer</Text>
+    
+             <View
+            style={{
+              borderBottomStartRadius: 10,
+              borderBottomEndRadius: 10,
+              //  borderColor: "#EBE7E6",
+              borderColor: '#3B3B3B',
+              borderBottomWidth: 2,
+            }} />
+          <DrawerItem
+            label="Logout"
+            labelStyle={{
+              marginLeft: -25,
+              fontFamily: 'Robbto-medium',
+              fontSize: 15,
+              fontWeight: 'bold',
+              color: 'black',
+            }}
+            onPress={() => {
+              props.navigation.navigate('User Profile')
+            }}
+            icon={() => (
+    
+              <MaterialCommunityIcons name="logout" size={30} color="#900" />
+            )} />
+            <Text 
+            style={{padding:responsiveWidth(3),fontWeight:'bold',fontSize:responsiveFontSize(2),
+              }}> ArtCode @copyright 2023</Text>
       </View>
     </>
 
