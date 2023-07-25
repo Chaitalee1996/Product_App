@@ -10,7 +10,7 @@ const Drawer_Nav = () => {
   return (
     <View style={{flex:1}}>
        <Drawer.Navigator>
-      <Drawer.Screen name="Product List" component={Bottom_Nav} options={{headerShown:true}} />
+      <Drawer.Screen name="Product List" component={Bottom_Nav} options={{headerShown:false}} />
       <Drawer.Screen name="User Profile" component={UserProfile} options={{headerShown:true}} />
     </Drawer.Navigator>
     </View>

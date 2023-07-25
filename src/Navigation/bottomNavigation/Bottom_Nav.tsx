@@ -8,7 +8,7 @@ const Bottom_Nav=()=> {
   return (
     <Tab.Navigator>
       <Tab.Screen name="fav" component={Favourite} options={{headerShown:false}} />
-      <Tab.Screen name="Product_details" component={ProductDetails} options={{headerShown:false}} />
+      <Tab.Screen name="Product_details" component={ProductDetails} options={{headerShown:true}} />
     </Tab.Navigator>
   );
 }
