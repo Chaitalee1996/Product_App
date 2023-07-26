@@ -12,7 +12,7 @@ const CustomDrawer = (props: any) => {
   
   return (
     <>
-      <View style={{ height: responsiveScreenHeight(30), backgroundColor: '#F08080', padding: responsiveWidth(10) }}>
+      <View style={{ height: responsiveScreenHeight(30),   backgroundColor: '#F2F2F2', padding: responsiveWidth(10) }}>
         <Image source={require('../../assest/profileIcon.jpg')} style={{ height: 90, width: 90 }} />
         <Text style={{ color: "white", fontSize: responsiveFontSize(2), fontWeight: 'bold', }}>ArtCode Comapny</Text>
       </View>

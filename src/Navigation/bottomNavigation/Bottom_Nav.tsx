@@ -25,7 +25,7 @@ const Bottom_Nav = () => {
       <Tab.Screen name="Product_list" component={ProductList}
         options={{
           headerShown: false, 
-   
+          tabBarLabel: 'Product List',
           tabBarActiveBackgroundColor: '#F08080',
           // tabBarIcon:(tabInfo)=>{
           //   return <Image source={require('../../assest/mobile.jpg')} style={{width:20,height:20,tintColor:tabInfo.focused?'green':'black'}} />

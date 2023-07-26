@@ -12,11 +12,15 @@ const Drawer_Nav = () => {
     const dimensions = useWindowDimensions();
   return (
     <View style={{flex:1}}>
-       <Drawer.Navigator initialRouteName='Products' drawerContent={(props)=> <CustomDrawer {...props}  screenOptions={{  headerShown:true,
+       <Drawer.Navigator initialRouteName='Products' drawerContent={(props)=> <CustomDrawer {...props} 
+        screenOptions={{  headerShown:true,drawerHideStatusBarOnOpen:false,
         drawerType: dimensions.width >= 768 ? 'front' : 'permanent',
-      }}/>}>
+
+      }}
+      
+      />}>
       <Drawer.Screen name="Products" component={Bottom_Nav} options={{headerShown:true}} />
- 
+    
     </Drawer.Navigator>
     </View>
   )

@@ -8,32 +8,22 @@
 import React from 'react';
 
 import {
-  View,
+  View,StatusBar
 } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-
-
-import { NavigationContainer } from '@react-navigation/native';
-import Favourite from './src/screen/Favourite';
-import ProductList from './src/screen/ProductList';
 import Stack_nav from './src/Navigation/stacknavigation/stack_nav';
-
-
-
 
 function App(): JSX.Element {
 
   const Tab = createBottomTabNavigator();
-
+console.log(StatusBar.currentHeight)
   return (
     <View style={{ flex: 1 }}>
       <Stack_nav/>
+     
     </View>
 
   )
 }
-
-
 
 export default App;

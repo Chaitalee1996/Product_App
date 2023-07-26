@@ -8,6 +8,7 @@ export default function Favourite() {
   <View>
     <Text>Favoute list </Text>
     <Button title="Go to Register" onPress={()=>{navigation.navigate('register')}}/>
+    {/* {navigation.reset({routes:'register'})} */}
   </View>
   )
 }
