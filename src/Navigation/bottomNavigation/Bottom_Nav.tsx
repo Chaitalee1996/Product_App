@@ -26,16 +26,18 @@ const Bottom_Nav = () => {
         options={{
           headerShown: false, 
           tabBarLabel: 'Product List',
+          headerTitleStyle:{
+            fontSize:30
+          },
           tabBarActiveBackgroundColor: '#F08080',
           // tabBarIcon:(tabInfo)=>{
           //   return <Image source={require('../../assest/mobile.jpg')} style={{width:20,height:20,tintColor:tabInfo.focused?'green':'black'}} />
           // }
-
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="details" size={30} color="#900" />
           ),
         }} />
-      <Tab.Screen name="Fav" component={Favourite} options={{tabBarStyle: { display: 'none' },
+      <Tab.Screen name="Fav" component={Favourite} options={{tabBarStyle: { display: 'none', },
         headerShown: false,
         tabBarActiveBackgroundColor: '#F08080',
         tabBarIcon: () => (
