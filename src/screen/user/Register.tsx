@@ -6,7 +6,7 @@ export default function Register() {
 const navigation=useNavigation()
   return (
 <View>
-<Button title='Back' onPress={()=>navigation.navigate('user')}></Button>
+  <Button title='Back' onPress={()=>navigation.navigate('user')}></Button>
 </View>
   )
 }

@@ -18,7 +18,7 @@ const Bottom_Nav = () => {
         headerShown: false,
         tabBarLabel: 'Favrouites',
         tabBarIcon: (tabInfo) => (
-        
+    
           <MaterialIcons name="space-dashboard" size={30} color="#900" />
         ),
       }} />

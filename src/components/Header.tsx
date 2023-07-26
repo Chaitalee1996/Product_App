@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <View>
       <Text>Header</Text>
+      
     </View>
   )
 }

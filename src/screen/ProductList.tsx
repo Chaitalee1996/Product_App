@@ -1,10 +1,12 @@
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
-import { Text,View } from 'react-native'
+import { Text,View,Button } from 'react-native'
 
 export default function ProductList() {
+  const navigation=useNavigation()
   return (
  <View>
-  <Text>Prodcut list</Text>
+<Button title="Show Product Details" onPress={()=>{navigation.navigate('productDetails')}}/>
  </View>
   )
 }

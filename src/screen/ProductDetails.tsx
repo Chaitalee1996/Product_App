@@ -6,7 +6,7 @@ const ProductDetails=()=>{
     const navigation=useNavigation()
     return(
         <View>
-            <Button title="Go to Register" onPress={()=>{navigation.navigate('register')}}/>
+            <Button title="Go to Dashbaord" onPress={()=>{navigation.navigate('dashbaord')}}/>
         </View>
     )
 }

@@ -27,6 +27,5 @@ export default function Stack_nav() {
                     <Stack.Screen name="productDetails" component={ProductDetails} options={{title:'Product Details',headerBackTitleVisible:false}}></Stack.Screen>
                 </Stack.Navigator>
             </NavigationContainer>
-
     )
 }

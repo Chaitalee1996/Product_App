@@ -17,7 +17,6 @@ const Drawer_Nav = () => {
         drawerType: dimensions.width >= 768 ? 'front' : 'permanent',
 
       }}
-      
       />}>
       <Drawer.Screen name="Products" component={Bottom_Nav} options={{headerShown:true}} />
     
