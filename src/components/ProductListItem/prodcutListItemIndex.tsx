@@ -1,42 +1,45 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet } from 'react-native'
-
-const ProductListItem = ({ title, onPress, bgColor }:any) => {
+import Background from "../commanComponent/Background";
+import { responsiveScreenHeight, responsiveScreenWidth, responsiveHeight } from 'react-native-responsive-dimensions'
+const ProductListItem = ({ title, onPress, bgColor }: any) => {
     return (
-        <View style={styles.productItemContainer}>
-            <Pressable android_ripple={{color:"#ced474"}} onPress={onPress} style={{...styles.pressableVeiw,backgroundColor:bgColor}}>
-                <View style={styles.ProductItemInner}>
-                    <Text ellipsizeMode='clip' numberOfLines={1} style={styles.title}>
-                        {title}
-                    </Text>
+       
+            <View style={styles.productItemContainer}>
+                <Pressable android_ripple={{ color: "#ced474" }} onPress={onPress} style={{ ...styles.pressableVeiw, backgroundColor: bgColor }}>
+                    <View style={styles.ProductItemInner}>
+                        <Text ellipsizeMode='clip' numberOfLines={1} style={styles.title}>
+                            {title}
+                        </Text>
 
-                </View>
-            </Pressable>
-        </View>
+                    </View>
+                </Pressable>
+            </View>
 
     )
 }
 
-const styles=StyleSheet.create({
-    productItemContainer:{
-        flex:1,
-        margin:16,
-        height:220,
-        borderRadius:1
+const styles = StyleSheet.create({
+    productItemContainer: {
+        width: responsiveScreenWidth(39),
+        // height:responsiveScreenWidth(30) ,
+        margin: 16,
+        // height:220,
+        borderRadius: 1
     },
-    ProductItemInner:{
-        flex:1,
-        padding:15,
-        justifyContent:'center',
-        alignItems:'center'
+    ProductItemInner: {
+        height: responsiveHeight(20),
+        padding: 15,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    pressableVeiw:{
-        flex:1
+    pressableVeiw: {
+
     },
-    title:{
-        fontWeight:'bold',
-        fontSize:30,
-        color:'black'
+    title: {
+        fontWeight: 'bold',
+        fontSize: 30,
+        color: 'black'
 
     }
 })

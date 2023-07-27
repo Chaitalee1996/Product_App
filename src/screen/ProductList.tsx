@@ -4,7 +4,9 @@ import { Text, View, Button, ActivityIndicator } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import ProductListItem from '../components/ProductListItem/prodcutListItemIndex'
 import {GetPtoductsListAPI} from '../api/Products/productListAPI'
+import Background from '../components/commanComponent/Background'
 
+ 
 
 
 export default function ProductList() {
@@ -36,7 +38,9 @@ const handalOnPress=(getId:number)=>{
 }
 
   return (
-    <>
+    <Background>
+    
+
 
       <FlatList
         data={ProductsList}
@@ -48,6 +52,7 @@ const handalOnPress=(getId:number)=>{
       ></FlatList>
      
 
-    </>
+    
+    </Background>
   )
 }

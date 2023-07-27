@@ -13,10 +13,10 @@ const Tab = createBottomTabNavigator();
 const Bottom_Nav = () => {
   return (
     <Tab.Navigator initialRouteName='dashbaord'   >
-      <Tab.Screen name="dashbaord" component={Dashboard} options={{
+      <Tab.Screen name="Dashboard" component={Dashboard} options={{
         tabBarActiveBackgroundColor: '#F08080',
         headerShown: false,
-        tabBarLabel: 'Favrouites',
+        tabBarLabel: 'Dashboard',
         tabBarIcon: (tabInfo) => (
     
           <MaterialIcons name="space-dashboard" size={30} color="#900" />
@@ -37,7 +37,7 @@ const Bottom_Nav = () => {
             <MaterialCommunityIcons name="details" size={30} color="#900" />
           ),
         }} />
-      <Tab.Screen name="Fav" component={Favourite} options={{tabBarStyle: { display: 'none', },
+      <Tab.Screen name="Favourite" component={Favourite} options={{tabBarStyle: { display: 'none', },
         headerShown: false,
         tabBarActiveBackgroundColor: '#F08080',
         tabBarIcon: () => (

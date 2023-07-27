@@ -1,11 +1,16 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import Background from '../components/commanComponent/Background'
 
 const Dashboard = () => {
   return (
-    <View>
-      <Text>Dashboard</Text>
-    </View>
+    <Background>
+      <View>
+        <Text>Dashboard</Text>
+      </View>
+
+    </Background>
+
   )
 }
 
