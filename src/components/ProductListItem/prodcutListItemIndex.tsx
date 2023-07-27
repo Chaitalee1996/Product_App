@@ -1,39 +1,47 @@
-import React from "react";
-import { View, Text, Pressable, StyleSheet } from 'react-native'
-import Background from "../commanComponent/Background";
-import { responsiveScreenHeight, responsiveScreenWidth, responsiveHeight } from 'react-native-responsive-dimensions'
+import React, { useEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { View, Text, Pressable, StyleSheet, TouchableOpacity } from 'react-native'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import { responsiveScreenWidth, responsiveHeight } from 'react-native-responsive-dimensions'
 const ProductListItem = ({ title, onPress, bgColor }: any) => {
-    return (
-       
-            <View style={styles.productItemContainer}>
-                <Pressable android_ripple={{ color: "#ced474" }} onPress={onPress} style={{ ...styles.pressableVeiw, backgroundColor: bgColor }}>
-                    <View style={styles.ProductItemInner}>
-                        <Text ellipsizeMode='clip' numberOfLines={1} style={styles.title}>
-                            {title}
-                        </Text>
 
-                    </View>
-                </Pressable>
-            </View>
+
+
+
+    return (
+
+        <View style={styles.productItemContainer}>
+            <Pressable android_ripple={{ color: "#ced474" }} onPress={onPress} style={{ ...styles.pressableVeiw, backgroundColor: bgColor }}>
+                <View style={styles.ProductItemInner}>
+                    <Text ellipsizeMode='clip' numberOfLines={1} style={styles.title}>
+                        {title}
+                    </Text>
+
+                </View>
+            </Pressable>
+        </View>
 
     )
 }
 
 const styles = StyleSheet.create({
     productItemContainer: {
-        width: responsiveScreenWidth(39),
-        // height:responsiveScreenWidth(30) ,
+        //  width: responsiveScreenWidth(39),
+        //  height:responsiveScreenWidth(30) ,
         margin: 16,
-        // height:220,
+        flex: 1,
+        height: 220,
         borderRadius: 1
     },
     ProductItemInner: {
-        height: responsiveHeight(20),
+        flex: 1,
+        // height: responsiveHeight(20),
         padding: 15,
         justifyContent: 'center',
         alignItems: 'center'
     },
     pressableVeiw: {
+        flex: 1,
 
     },
     title: {

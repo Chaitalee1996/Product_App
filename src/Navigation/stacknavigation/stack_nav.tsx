@@ -13,7 +13,15 @@ import Register from '../../screen/user/Register';
 import { title } from 'process';
 
 export default function Stack_nav() {
-    const Stack = createNativeStackNavigator()
+    type RootStackParamList = {
+        Splash: undefined;
+        Nav:undefined;
+        user: undefined
+        register:  undefined;
+        productDetails:{ productId: string };
+      };
+      
+    const Stack = createNativeStackNavigator<RootStackParamList>()
     return (
       
             <NavigationContainer>

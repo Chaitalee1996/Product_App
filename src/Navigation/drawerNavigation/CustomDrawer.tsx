@@ -19,7 +19,7 @@ const CustomDrawer = (props: any) => {
 
       <View style={{ height: responsiveScreenHeight(50) }}>
         <>
-          {/* ustom drawer using Drawer Item */}
+          {/* custom drawer using Drawer Item */}
           {/* to access the list of drawer navigation scrren(Drawer_Nav) <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} /> */}
           <View

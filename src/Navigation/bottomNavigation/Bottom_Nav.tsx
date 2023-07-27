@@ -6,13 +6,16 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Dashboard from '../../screen/Dashboard';
 import ProductList from '../../screen/ProductList';
+import { NavigatorScreenParams } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import RootStackParamList from '../stacknavigation/stack_nav'
 
-
+;
 const Tab = createBottomTabNavigator();
 
 const Bottom_Nav = () => {
   return (
-    <Tab.Navigator initialRouteName='dashbaord'   >
+    <Tab.Navigator initialRouteName='Dshbaord'   >
       <Tab.Screen name="Dashboard" component={Dashboard} options={{
         tabBarActiveBackgroundColor: '#F08080',
         headerShown: false,
