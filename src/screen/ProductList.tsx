@@ -1,48 +1,25 @@
 import { useNavigation } from '@react-navigation/native'
 import React, { useState, useEffect, useContext } from 'react'
-import { Text, View, Button, ActivityIndicator, StyleSheet } from 'react-native'
-import { FlatList } from 'react-native-gesture-handler'
+import { View, FlatList, StyleSheet, Text } from 'react-native'
+
 import ProductListItem from '../components/ProductListItem/prodcutListItemIndex'
-import { GetPtoductsListAPI } from '../api/Products/productListAPI'
-import Background from '../components/commanComponent/Background'
+
+import { useDispatch, useSelector } from 'react-redux';
 
 import { NavigationProp } from '@react-navigation/native'
+import { getProductsListAction } from '../store/slices/ProductsSlice'
 // import { Context } from '../context'
 type IncidentNavigation = {
   productId: String;
 
 }
-
-
 export default function ProductList() {
 
-  // const { loading, productsList } = useContext<any>(Context)
-  const [productsList, setProductsList] = useState([])
-  const [loading, setLoading] = useState(false)
- 
+  const productList = useSelector((state: any) => state.productReducer.productList)
+  
+  const dispatch = useDispatch();
   const navigation = useNavigation<NavigationProp<Record<string, IncidentNavigation>, string>>();
   // const  = <IncidentNavigation>()
-      useEffect(() => {
-        const ProductListAPI = () => {
-            GetPtoductsListAPI().then((res) => {
-                if (res) {
-                    setLoading(false),
-                        setProductsList(res.data.products);
-                }
-            }
-
-
-            ).catch((error) => { console.log(error) })
-        }
-        ProductListAPI()
-    }, [])
-  
-  if (loading) {
-    return (
-      <ActivityIndicator style={styles.loader} color={"red"} size={"large"} />
-    )
-  }
-
   //random color for every list item
   const randomColour = () => {
     const letters = "0123456789ABCDEF"
@@ -59,10 +36,17 @@ export default function ProductList() {
     navigation.navigate('productDetails', { productId: getId })
   }
 
+  const getProductList=()=>{
+     dispatch(getProductsListAction())
+  }
+useEffect(()=>{
+  getProductList()
+},[])
   return (
     <View>
+      <Text>Prodcut list</Text>
       <FlatList
-        data={productsList}
+        data={productList}
         renderItem={(dataItem) =>
           // <Text>{dataItem.item.title}</Text> 
           <ProductListItem title={dataItem.item.title} bgColor={randomColour()} onPress={() => { handalOnPress(dataItem.item.id) }} />}

@@ -6,30 +6,24 @@
  */
 
 import React from 'react';
-
+import { Provider } from 'react-redux';
 import {
-  View,StatusBar
+  View, StatusBar
 } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import Stack_nav from './src/Navigation/stacknavigation/stack_nav';
-import ProductContext from './src/context/index';
+
+import store from './src/store';
 
 
 function App(): JSX.Element {
 
 
-console.log(StatusBar.currentHeight)
+  console.log(StatusBar.currentHeight)
   return (
-  
-    // <ProductContext> 
-   
-  <Stack_nav/>
-  
-    //  </ProductContext>
-  
-    
-    
-
+   <Provider store={store}>
+      <Stack_nav />
+    </Provider>
   )
 }
 

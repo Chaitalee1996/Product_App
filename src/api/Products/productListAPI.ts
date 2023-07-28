@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React from 'react'
 
 
-const GetPtoductsListAPI = async () => {
+
+const GetProductsListAPI = async () => {
   const respose = await axios({
     method: 'GET',
     url: "https://dummyjson.com/products"
@@ -10,11 +10,9 @@ const GetPtoductsListAPI = async () => {
   return respose
 };
 
-// const ProductsListAPI ={
-//     GetPtoductsList
-// }
 
-const GetProductDetailsAPI = async (id: any) => {
+
+ const GetProductDetailsAPI = async (id: any) => {
   const respose = await axios({
     method: "GET",
     url: `https://dummyjson.com/products/${id}`
@@ -23,6 +21,11 @@ const GetProductDetailsAPI = async (id: any) => {
 
 }
 
-export { GetPtoductsListAPI, GetProductDetailsAPI }
+const ProductsListAPI ={
+  GetProductsListAPI,
+  GetProductDetailsAPI
+ }
+
+export default ProductsListAPI;
 
 
