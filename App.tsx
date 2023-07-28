@@ -12,16 +12,23 @@ import {
 } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Stack_nav from './src/Navigation/stacknavigation/stack_nav';
+import ProductContext from './src/context/index';
+
 
 function App(): JSX.Element {
 
-  const Tab = createBottomTabNavigator();
+
 console.log(StatusBar.currentHeight)
   return (
-    <View style={{ flex: 1 }}>
-      <Stack_nav/>
-     
-    </View>
+  
+    // <ProductContext> 
+   
+  <Stack_nav/>
+  
+    //  </ProductContext>
+  
+    
+    
 
   )
 }

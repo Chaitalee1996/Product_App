@@ -6,11 +6,9 @@ import { GetProductDetailsAPI } from '../api/Products/productListAPI'
 import ProductDetailsItem from "../components/ProdcutDetailsItem/productDetailsItemIndex";
 import { RouteProp } from '@react-navigation/native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import addToFavourite from './ProductList'
 
-  type Props={
-     title:string
-  }
+
+
 
 const ProductDetails = () => {
   // type IncidentRouteParams = {
@@ -21,35 +19,29 @@ const ProductDetails = () => {
   const productId = useRoute<any>()?.params.productId
 
   const [productDetails, setProductDetails] = useState<any>([])
-console.log(productDetails)
+  // console.log(productDetails)
 
   const [favorite, setFavourite] = useState([])
 
 
-  // function addToFavourite(P_Id: any) {
-  //   console.log("P_Id", P_Id)
-  //   let cpyFavouiteItems = [...favorite]
-  //   const index = cpyFavouiteItems.findIndex(item => item.id === P_Id)
+  function addToFavourite(P_Id: any) {
+    console.log("P_Id", P_Id)
+    let cpyFavouiteItems = [...favorite]
+    const index = cpyFavouiteItems.findIndex(item => item.id === P_Id)
 
-  //   if (index === -1) {
-  //     const getCurrentProduct = productDetails.find(
-  //       (item:any) => item.id == P_Id)
-  //     console.log("getCurrentProduct", getCurrentProduct)
-  //     cpyFavouiteItems.push({
-  //       title:getCurrentProduct.title
-  //     })
-      
-  //     }
-  //   setFavourite(cpyFavouiteItems)
-  // }
+    // if (index === -1) {
+
+    //   const getCurrentProduct = productDetails
+    //   console.log("getCurrentProduct,", getCurrentProduct)
+
+    // }
+    setFavourite(cpyFavouiteItems)
+  }
 
 
   useEffect(() => {
-    GetProductDetailsAPI(productId).then((res) =>{
-       setProductDetails(res.data),
-       console.log("res==>",res.data)
-    }
-      
+    GetProductDetailsAPI(productId).then((res) => 
+      setProductDetails(res.data)
     ).catch((error) => { console.log(error) })
 
   }, [])
@@ -61,8 +53,8 @@ console.log(productDetails)
       headerRight: () => {
         return (
           <TouchableOpacity onPress={() => { console.log("Add to favorite")
-            // addToFavourite(productId) 
-            }}>
+            // addToFavourite(productId)
+          }}>
             < MaterialIcons name="favorite-border" size={30} />
           </TouchableOpacity>
         )

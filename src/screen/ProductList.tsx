@@ -1,12 +1,13 @@
 import { useNavigation } from '@react-navigation/native'
-import React, { useState, useEffect } from 'react'
-import { Text, View, Button, ActivityIndicator } from 'react-native'
+import React, { useState, useEffect, useContext } from 'react'
+import { Text, View, Button, ActivityIndicator, StyleSheet } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import ProductListItem from '../components/ProductListItem/prodcutListItemIndex'
 import { GetPtoductsListAPI } from '../api/Products/productListAPI'
 import Background from '../components/commanComponent/Background'
 
 import { NavigationProp } from '@react-navigation/native'
+// import { Context } from '../context'
 type IncidentNavigation = {
   productId: String;
 
@@ -15,16 +16,33 @@ type IncidentNavigation = {
 
 export default function ProductList() {
 
+  // const { loading, productsList } = useContext<any>(Context)
   const [productsList, setProductsList] = useState([])
+  const [loading, setLoading] = useState(false)
+ 
   const navigation = useNavigation<NavigationProp<Record<string, IncidentNavigation>, string>>();
   // const  = <IncidentNavigation>()
+      useEffect(() => {
+        const ProductListAPI = () => {
+            GetPtoductsListAPI().then((res) => {
+                if (res) {
+                    setLoading(false),
+                        setProductsList(res.data.products);
+                }
+            }
 
-  useEffect(() => {
-    GetPtoductsListAPI().then((res) =>
-      setProductsList(res.data.products),
-    ).catch((error) => { console.log(error) })
 
-  }, [])
+            ).catch((error) => { console.log(error) })
+        }
+        ProductListAPI()
+    }, [])
+  
+  if (loading) {
+    return (
+      <ActivityIndicator style={styles.loader} color={"red"} size={"large"} />
+    )
+  }
+
   //random color for every list item
   const randomColour = () => {
     const letters = "0123456789ABCDEF"
@@ -42,21 +60,29 @@ export default function ProductList() {
   }
 
   return (
+    <View>
+      <FlatList
+        data={productsList}
+        renderItem={(dataItem) =>
+          // <Text>{dataItem.item.title}</Text> 
+          <ProductListItem title={dataItem.item.title} bgColor={randomColour()} onPress={() => { handalOnPress(dataItem.item.id) }} />}
+        keyExtractor={(keyId) => keyId.id}
+        numColumns={2}
+      ></FlatList>
 
+    </View>
 
-
-
-    <FlatList
-      data={productsList}
-      renderItem={(dataItem) =>
-        // <Text>{dataItem.item.title}</Text> 
-        <ProductListItem title={dataItem.item.title} bgColor={randomColour()} onPress={() => { handalOnPress(dataItem.item.id) }} />}
-      keyExtractor={(keyId) => keyId.id}
-      numColumns={2}
-    ></FlatList>
 
 
 
 
   )
 }
+
+const styles = StyleSheet.create({
+  loader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})
