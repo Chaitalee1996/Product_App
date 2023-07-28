@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { View, FlatList, StyleSheet, Text } from 'react-native'
 
 import ProductListItem from '../components/ProductListItem/prodcutListItemIndex'
-
+ 
 import { useDispatch, useSelector } from 'react-redux';
 
 import { NavigationProp } from '@react-navigation/native'

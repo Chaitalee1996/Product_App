@@ -11,7 +11,7 @@ import rootReducers from './rootReducers';
 const store = configureStore({
 
     reducer: rootReducers
-
+ 
 })
 
 export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;

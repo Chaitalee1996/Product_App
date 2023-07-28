@@ -8,8 +8,7 @@ const GetProductsListAPI = async () => {
     url: "https://dummyjson.com/products"
   })
   return respose
-};
-
+}; 
 
 
  const GetProductDetailsAPI = async (id: any) => {
